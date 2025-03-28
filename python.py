@@ -12,7 +12,7 @@ view_option = st.sidebar.radio("Choose what to view:", ["Our Team", "Course Intr
 # Team Photo and Name
 if view_option == "Our Team":
     st.header("Our Team")
-    team_img = Image.open("/workspaces/codespaces-blank/Members Photo/1.jpg")  # Replace with your image file path
+    team_img = Image.open("/workspaces/codespaces-blank/Members_Photo/1.jpg")  # Replace with your image file path
     st.image(team_img, caption="Our Team", use_column_width=True)
     st.write("Team Members: Azhar, Suhayb, Hakimi, Humaira, Lydia")
 
