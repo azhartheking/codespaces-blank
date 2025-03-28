@@ -20,7 +20,7 @@ if view_option == "Our Team":
     team_img_path = os.path.join("azhar.jpg")
     
     if os.path.exists(team_img_path):
-        team_img = Image.open(team_img_path)
+        team_img = Image.open(azhar.JPG)
         st.image(team_img, caption="Our Team", use_column_width=True)
     else:
         st.error("Error: Team image not found. Please check the file path.")
@@ -40,7 +40,7 @@ elif view_option == "Lecturer Information":
     lecturer_img_path = "lecturer_photo.jpg"
     
     if os.path.exists(lecturer_img_path):
-        lecturer_img = Image.open(lecturer_img_path)
+        lecturer_img = Image.open(azhar.JPG)
         st.image(lecturer_img, caption="Lecturer: Dr. XYZ", use_column_width=True)
     else:
         st.error("Error: Lecturer image not found. Please check the file path.")
