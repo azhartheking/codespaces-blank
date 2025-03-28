@@ -17,7 +17,7 @@ if view_option == "Our Team":
     st.header("Our Team")
     
     # Corrected path handling
-    team_img_path = os.path.join("Members Photo", "1.jpg")
+    team_img_path = os.path.join("azhar.jpg")
     
     if os.path.exists(team_img_path):
         team_img = Image.open(team_img_path)
