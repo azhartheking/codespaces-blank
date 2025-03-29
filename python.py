@@ -16,27 +16,16 @@ view_option = st.sidebar.radio(
 if view_option == "Our Team":
     st.header("Our Team")
     
- # Team Members images path handling
-    team_img_path = [
-        "Members Photo/azhar.JPG",
-    "Members Photo/1.jpg",
-    "Members Photo/2.jpg",
-    "Members Photo/3.jpg",
-    "Members Photo/4.jpg"
-    ]
-    # Team member names
-    team_member_names = ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"]
+    # Corrected path handling
+    team_img_path = os.path.join("azhar.jpg")
     
-    # Create 5 columns
-    cols = st.columns(5)
-    
-    # Loop through each column and display the corresponding image and name
-    for col, img_path, name in zip(cols, team_img_path, team_member_names):
-        if os.path.exists(img_path):
-            img = Image.open(img_path)
-            col.image(img, caption=name, use_container_width=True)
-        else:
-            col.error(f"Image for {name} not found.")
+    if os.path.exists(team_img_path):
+        team_img = Image.open(azhar.JPG)
+        st.image(team_img, caption="Our Team", use_column_width=True)
+    else:
+        st.error("Error: Team image not found. Please check the file path.")
+
+    st.write("Team Members: Azhar, Suhayb, Hakimi, Humaira, Lydia")
 
 # Course Introduction
 elif view_option == "Course Introduction":
