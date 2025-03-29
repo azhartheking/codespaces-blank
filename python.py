@@ -32,7 +32,7 @@ if view_option == "Our Team":
     
     # Loop through each column and display the corresponding image and name
     for col, img_path, name in zip(cols, team_img_path, team_member_names):
-        if os.path.exists("Members Photo/drhakim.2.JPG"):
+        if os.path.exists(img_path):
             img = Image.open(img_path)
             col.image(img, caption=name, use_container_width=True)
         else:
