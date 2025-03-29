@@ -15,28 +15,42 @@ view_option = st.sidebar.radio(
 # Team Photo and Name
 if view_option == "Our Team":
     st.header("Our Team")
-    
- # Team Members images path handling
+
+    # Team Members images path handling
     team_img_path = [
         "Members Photo/azhar.JPG",
-    "Members Photo/1.jpg",
-    "Members Photo/2.jpg",
-    "Members Photo/3.jpg",
-    "Members Photo/4.jpg"
+        "Members Photo/1.jpg",
+        "Members Photo/1.jpg",
+        "Members Photo/1.jpg",
+        "Members Photo/2.jpg",
+        "Members Photo/1.jpg",
     ]
     # Team member names
-    team_member_names = ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"]
+    team_member_names = ["Azhar", "Suhayb", "Hakimi", "Humaira", "ghost", "Lydia"]
     
-    # Create 5 columns
-    cols = st.columns(5)
-    
-    # Loop through each column and display the corresponding image and name
-    for col, img_path, name in zip(cols, team_img_path, team_member_names):
-        if os.path.exists(img_path):
-            img = Image.open(img_path)
-            col.image(img, caption=name, use_container_width=True)
-        else:
-            col.error(f"Image for {name} not found.")
+    # First row: Azhar, Suhayb, Hakimi
+    row1_cols = st.columns(3, gap="small")  # Create 3 columns for the first row
+    for col, img_path, name in zip(row1_cols, team_img_path[:3], team_member_names[:3]):
+        with col:
+            if os.path.exists(img_path):
+                # Display the image with a caption
+                st.image(img_path, caption=f"**{name}**", use_container_width=True)
+            else:
+                # Display a placeholder for missing images
+                st.error(f"Image for {name} not found.")
+
+    # Second row: Humaira, ghost, Lydia
+    row2_cols = st.columns(3, gap="small")  # Create 2 columns for the second row
+    for col, img_path, name in zip(row2_cols, team_img_path[3:], team_member_names[3:]):
+        with col:
+            if os.path.exists(img_path):
+                # Display the image with a caption
+                st.image(img_path, caption=f"**{name}**", use_container_width=True)
+            elif name == "ghost":
+                st.write("")
+            else:
+                # Display a placeholder for missing images
+                st.error(f"Image for {name} not found.")
 
 # Course Introduction
 elif view_option == "Course Introduction":
