@@ -11,7 +11,7 @@ st.title("Team Project Website")
 st.sidebar.title("Dashboard Selector")
 view_option = st.sidebar.radio(
     "Choose what to view:",
-    ["Our Team", "Course Introduction", "Lecturer Information", "Lecture Notes", "Mindmap", "Self Reflection", "Extra Categories"]
+    ["Our Team", "Course Introduction", "Lecturer Information", "Mindmap", "Self Reflection", "Extra Categories"]
 )
 
 # Team Photo and Name
