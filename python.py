@@ -154,3 +154,8 @@ elif view_option == "Self Reflection":
         st.image(reflection_image, caption=f"Reflection by {selected_person}", use_container_width=True)
     else:
         st.warning(f"Reflection PDF for {selected_person} is not available.")
+elif viewo_option == "Extra Information":
+    st.markdown("" Gas Chromotography In Industry")
+    st.video('https://youtu.be/q-N4fSSz3ME?si=GJTfq5md3G0fiK_y')
+    st.markdown(""High Liquid Performance Chromotograph")
+    st.video('https://youtu.be/q-N4fSSz3ME?si=GJTfq5md3G0fiK_y')
