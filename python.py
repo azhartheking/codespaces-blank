@@ -72,6 +72,19 @@ elif view_option == "Lecturer Information":
             st.download_button(label="Download Mindmap PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
     else:
         st.warning(f"Mindmap for {selected_chapter} by {selected_person} is not available yet.")
+        
+    # Mindmap Section
+elif view_option == "Mindmap":
+    st.header("Mindmap")
+    selected_chapter = st.selectbox("Select Chapter", [f"Chapter {i}" for i in range(1, 9)])
+    selected_person = st.selectbox("Select Member", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
+    pdf_file = f"mindmap_{selected_chapter}_{selected_person}.pdf"  # Replace with your PDF file path
+    st.write(f"Mindmap for {selected_chapter} by {selected_person}")
+    try:
+        with open(pdf_file, "rb") as pdf:
+            st.download_button(label="Download Mindmap PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
+    except FileNotFoundError:
+        st.write("PDF is not available yet.")
 
 # Self Reflection Section
 elif view_option == "Self Reflection":
