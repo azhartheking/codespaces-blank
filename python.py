@@ -51,6 +51,7 @@ elif view_option == "Lecturer Information":
     lecturer_img_path_1 = "Members Photo/drhakim2.jpg"
 
     if os.path.exists(lecturer_img_path):
+        st.write("An Outstanding Educator, Researcher, and Innovator")
         lecturer_img = Image.open(lecturer_img_path)
         st.image(lecturer_img, caption="Lecturer: Ts. ChM. Dr. Mohd Dzul Hakim Wirzal", use_column_width=True)
     else:
@@ -62,16 +63,10 @@ elif view_option == "Lecturer Information":
     if os.path.exists(lecturer_img_path_1):
         lecturer_img = Image.open(lecturer_img_path_1)
         st.image(lecturer_img,use_column_width=True)
-
-
-# Mindmap Section
-elif view_option == "Mindmap":
-    st.header("Mindmap")
-    selected_chapter = st.selectbox("Select Chapter", [f"Chapter {i}" for i in range(1, 9)])
-    selected_person = st.selectbox("Select Member", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
-    
-    pdf_file = f"mindmap_{selected_chapter}_{selected_person}.pdf"
-    
+    st.write("Dr. Hakim is also highly regarded for his international collaborations, working closely with renowned institutions such as NTNU (Norway), USP (Brazil), PRSB, UCBL (France), UCLL (Belgium), and KEEI (Uzbekistan). His active involvement in cross-border research and academic exchange programs has significantly contributed to scientific knowledge, technological advancements, and global cooperation in chemical engineering. ")
+    st.write("Beyond his research and academic pursuits, Dr. Hakim plays a crucial role in mentoring and guiding students, inspiring them to excel in their respective fields. His ability to bridge theoretical knowledge with industrial applications makes him a highly respected figure among both students and fellow academics. His passion for research, education, and innovation continues to drive progress in chemical engineering, making a lasting impact on both the academic community and the industry. ")
+    st.write("A true inspiration and a remarkable leader in the field, Dr. Hakim’s unwavering dedication to excellence sets an outstanding example for aspiring engineers and researchers worldwide  ")
+   
     if os.path.exists(pdf_file):
         with open(pdf_file, "rb") as pdf:
             st.download_button(label="Download Mindmap PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
