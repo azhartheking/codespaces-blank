@@ -80,13 +80,17 @@ elif view_option == "Self Reflection":
     
     pdf_file = f"Reflections/reflection_{selected_person}.pdf"
     
-    # Check if file exists
     if os.path.exists(pdf_file):
-        # Display PDF in an iframe
-        pdf_viewer = f"""
-        <iframe src="{pdf_file}" width="700" height="500"></iframe>
-        """
-        st.components.v1.html(pdf_viewer, height=500)
+        # Display PDF using Streamlit's built-in PDF viewer
+        st.subheader(f"Reflection by {selected_person}")
+        st.write("You can view the reflection below:")
+
+        with open(pdf_file, "rb") as pdf:
+            st.download_button(label="Download PDF", data=pdf, file_name=f"reflection_{selected_person}.pdf", mime="application/pdf")
+        
+        # Use st.pdf_viewer() to show the PDF
+        st.write("### View PDF:")
+        st.pdf_viewer(pdf_file)  # Streamlit 1.26+
     
     else:
         st.warning(f"Reflection for {selected_person} is not available yet.")
