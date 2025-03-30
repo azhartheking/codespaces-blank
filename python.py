@@ -51,7 +51,7 @@ elif view_option == "Lecturer Information":
     lecturer_img_path =  "Members Photo/drhakim.1.jpg"
     
     if os.path.exists(lecturer_img_path):
-        lecturer_img = Image.open(azhar.JPG)
+        lecturer_img = Image.open(drhakim.1.jpg)
         st.image(lecturer_img, caption="Lecturer: Dr. XYZ", use_column_width=True)
     else:
         st.error("Error: Lecturer image not found. Please check the file path.")
