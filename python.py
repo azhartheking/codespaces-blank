@@ -15,15 +15,14 @@ view_option = st.sidebar.radio(
 # Team Photo and Name
 if view_option == "Our Team":
     st.header("Our Team")
-
+    
     # Team Members images path handling
     team_img_path = [
-        "Members Photo/azhar.JPG",
-        "Members Photo/1.jpg",
-        "Members Photo/1.jpg",
-        "Members Photo/1.jpg",
-        "Members Photo/1.jpg",
+        "Members Photo/3.jpeg",
+        "Members Photo/3.jpg",
+        "Members Photo/2.jpeg",
         "Members Photo/2.jpg",
+        "Members Photo/5.jpeg"
     ]
     # Team member names
     team_member_names = ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia", "Ghost"]
@@ -61,43 +60,62 @@ elif view_option == "Course Introduction":
 elif view_option == "Lecturer Information":
     st.header("Lecturer Information")
     
-    # Corrected path handling for lecturer image
-    lecturer_img_path = "lecturer_photo.jpg"
-    
+    lecturer_img_path = "Members Photo/drhakim.1.jpg"
+    lecturer_img_path_1 = "Members Photo/drhakim2.jpg"
+
     if os.path.exists(lecturer_img_path):
-        lecturer_img = Image.open(azhar.JPG)
-        st.image(lecturer_img, caption="Lecturer: Dr. XYZ", use_column_width=True)
+        st.write("An Outstanding Educator, Researcher, and Innovator")
+        lecturer_img = Image.open(lecturer_img_path)
+        st.image(lecturer_img, caption="Lecturer: Ts. ChM. Dr. Mohd Dzul Hakim Wirzal",  use_container_width=True)
     else:
         st.error("Error: Lecturer image not found. Please check the file path.")
     
-    st.write("Lecturer: Dr. XYZ")
-
-# Mindmap Section
+    st.write("Ts. ChM. Dr. Mohd Dzul Hakim Wirzal is a highly esteemed academic and researcher in the field of chemical engineering. As a Senior Lecturer at the Chemical Engineering Department of Universiti Teknologi PETRONAS (UTP) and a key researcher at the Centre of Research in Ionic Liquids (CORIL), his contributions to academia, research, and industrial collaboration are truly commendable. His expertise spans multiple advanced fields, including advanced oxidation processes, ionic liquids, hydrogen production, nanofiber membranes, and rare earth element (REE) separation and purification. His groundbreaking research focuses on the extraction and separation of rare earth elements, utilizing innovative approaches such as advanced leaching agents, supported liquid membranes, ion-exchange resins, and electrochemical processes. These research endeavors address the increasing global demand for REEs in high-tech industries while promoting sustainable resource management.")
+    st.write("Dr. Hakim's dedication to advancing chemical engineering is evident through his extensive research portfolio, which has secured more than RM12 million in research funding. He has led numerous high-impact studies that bridge academic advancements with practical, real-world applications. His research excellence is further reflected in his 112+ published scientific papers, accumulating nearly 2,000 citations with an impressive h-index of 26. These achievements underscore his significant contributions to knowledge creation and technological innovation within the chemical engineering domain.")
+    st.write("In recognition of his exceptional work, Dr. Hakim has been honored with numerous prestigious awards and accolades. He was recently awarded an Honorary Professorship from Karshi Engineering-Economics Institute, Uzbekistan (2024) and has been invited as a Fellow Teacher under the ERASMUS Grant at UCBL, France, and Oita Kosen, Japan. His commitment to both research and education has earned him multiple Gold Awards for Research Grants (2022, 2024) and Gold and Silver Medals for teaching innovations (2020). Furthermore, his contributions to student development were recognized with the Outstanding Student Development Award (2023), solidifying his impact on shaping future engineers and researchers.")
+    if os.path.exists(lecturer_img_path_1):
+        lecturer_img = Image.open(lecturer_img_path_1)
+        st.image(lecturer_img, use_container_width=True)
+    st.write("Dr. Hakim is also highly regarded for his international collaborations, working closely with renowned institutions such as NTNU (Norway), USP (Brazil), PRSB, UCBL (France), UCLL (Belgium), and KEEI (Uzbekistan). His active involvement in cross-border research and academic exchange programs has significantly contributed to scientific knowledge, technological advancements, and global cooperation in chemical engineering. ")
+    st.write("Beyond his research and academic pursuits, Dr. Hakim plays a crucial role in mentoring and guiding students, inspiring them to excel in their respective fields. His ability to bridge theoretical knowledge with industrial applications makes him a highly respected figure among both students and fellow academics. His passion for research, education, and innovation continues to drive progress in chemical engineering, making a lasting impact on both the academic community and the industry. ")
+    st.write("A true inspiration and a remarkable leader in the field, Dr. Hakim’s unwavering dedication to excellence sets an outstanding example for aspiring engineers and researchers worldwide  ")
+   
+    if os.path.exists(pdf_file):
+        with open(pdf_file, "rb") as pdf:
+            st.download_button(label="Download Mindmap PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
+    else:
+        st.warning(f"Mindmap for {selected_chapter} by {selected_person} is not available yet.")
+        
+    # Mindmap Section
 elif view_option == "Mindmap":
     st.header("Mindmap")
-    
-    # Select a person
     selected_person = st.selectbox("Select Member", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
-    
-    # Loop through all chapters and display their images
-    for chapter in range(1, 10):  # Assuming there are 9 chapters
-        image_file = f"Su/Ch{chapter}_{selected_person[0].upper()}.jpg"  # Use the first letter of the person's name
-        
-        if os.path.exists(image_file):
-            st.subheader(f"Chapter {chapter}")
-            st.image(image_file, caption=f"Mindmap for Chapter {chapter} by {selected_person}", use_container_width=True)
-        else:
-            st.warning(f"Mindmap for Chapter {chapter} by {selected_person} is not available.")
+    pdf_file = f"mindmap_{selected_person}.pdf"  # Replace with your PDF file path
+    st.write(f"Mindmap by {selected_person}")
+    try:
+        with open(pdf_file, "rb") as pdf:
+            st.download_button(label="Download Mindmap PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
+    except FileNotFoundError:
+        st.write("PDF is not available yet.")
 
 # Self Reflection Section
 elif view_option == "Self Reflection":
     st.header("Self Reflection")
     selected_person = st.selectbox("Select a person to view reflection", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
     
-    pdf_file = f"reflection_{selected_person}.pdf"
+    pdf_file = f"Reflections/reflection_{selected_person}.pdf"
     
     if os.path.exists(pdf_file):
+        # Display PDF using Streamlit's built-in PDF viewer
+        st.subheader(f"Reflection by {selected_person}")
+        st.write("You can view the reflection below:")
+
         with open(pdf_file, "rb") as pdf:
-            st.download_button(label="Download Reflection PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
+            st.download_button(label="Download PDF", data=pdf, file_name=f"reflection_{selected_person}.pdf", mime="application/pdf")
+        
+        # Use st.pdf_viewer() to show the PDF
+        st.write("### View PDF:")
+        st.pdf_viewer(pdf_file)  # Streamlit 1.26+
+    
     else:
         st.warning(f"Reflection for {selected_person} is not available yet.")
