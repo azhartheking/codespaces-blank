@@ -80,7 +80,7 @@ elif view_option == "Self Reflection":
     
     pdf_file = f"reflection_{selected_person}.pdf"
     
-     if os.path.exists(pdf_file):
+    if os.path.exists(pdf_file):
         # Show the PDF in Streamlit
         with open(pdf_file, "rb") as pdf:
             base64_pdf = pdf.read()
