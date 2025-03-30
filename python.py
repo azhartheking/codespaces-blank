@@ -5,7 +5,7 @@ import base64  # Import base64 for encoding images
 
 
 # Title
-st.title("Team Project Website")
+st.title("Analytical Chemistry E-Portfolio")
 
 # Sidebar Selector
 st.sidebar.title("Dashboard Selector")
