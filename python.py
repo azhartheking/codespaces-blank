@@ -90,13 +90,17 @@ elif view_option == "Lecturer Information":
 elif view_option == "Mindmap":
     st.header("Mindmap")
     selected_person = st.selectbox("Select Member", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
-    pdf_file = f"mindmap_{selected_person}.pdf"  # Replace with your PDF file path
-    st.write(f"Mindmap by {selected_person}")
-    try:
-        with open(pdf_file, "rb") as pdf:
-            st.download_button(label="Download Mindmap PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
-    except FileNotFoundError:
-        st.write("PDF is not available yet.")
+    
+        
+    # Loop through all chapters and display their images
+    for chapter in range(1, 10):  # Assuming there are 9 chapters
+        image_file = f"Su/Ch{chapter}_{selected_person[0].upper()}.jpg"  # Use the first letter of the person's name
+        
+        if os.path.exists(image_file):
+            st.subheader(f"Chapter {chapter}")
+            st.image(image_file, caption=f"Mindmap for Chapter {chapter} by {selected_person}", use_container_width=True)
+        else:
+            st.warning(f"Mindmap for Chapter {chapter} by {selected_person} is not available.")
 
 # Self Reflection Section
 elif view_option == "Self Reflection":
