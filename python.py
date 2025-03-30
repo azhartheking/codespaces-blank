@@ -58,12 +58,24 @@ elif view_option == "Course Introduction":
     st.header("Course Introduction")
     st.write("This course is a required component of core discipline in Chemical Engineering profession.  It is designed to equip engineers with the fundamental of analytical chemistry.  This course will help Engineers to take up challenges in analyzing and evaluating samples in chemical industries. ")
     selected_chapter = st.selectbox("Select a chapter to view Notes", 
-                                [" Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4", 
+                                ["Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4", 
                                  "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8"], 
                                 index=0)
     
-    pdf_file = f"Notes/Chapter_{selected_chapter}.pdf"
-    reflection_image = f"Notes/Chapter_{selected_chapter}.jpg"
+    pdf_file = f"Notes/Chapter_{selected_chapter.split(' ')[1]}.pdf"
+    
+    if os.path.exists(pdf_file):
+        st.subheader(selected_chapter)
+        
+        if hasattr(st, "pdf_viewer"):
+            st.pdf_viewer(pdf_file)
+        else:
+            st.warning("PDF viewer not supported in your Streamlit version. Please download the file instead.")
+        
+        with open(pdf_file, "rb") as pdf:
+            st.download_button(label="Download PDF", data=pdf, file_name=f"Chapter_{selected_chapter.split(' ')[1]}.pdf", mime="application/pdf")
+    else:
+        st.error("PDF not found. Please check the file name and directory.")
 
 
 # Lecturer Information
