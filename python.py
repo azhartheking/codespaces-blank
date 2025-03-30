@@ -78,16 +78,15 @@ elif view_option == "Self Reflection":
     st.header("Self Reflection")
     selected_person = st.selectbox("Select a person to view reflection", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
     
-    pdf_file = f"Reflections/{selected_person}.pdf"
+    pdf_file = f"Reflections/reflection_{selected_person}.pdf"
     
+    # Check if file exists
     if os.path.exists(pdf_file):
-        # Show the PDF in Streamlit
-        with open(pdf_file, "rb") as pdf:
-            base64_pdf = pdf.read()
-        
-        # Convert to displayable format
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="500"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
+        # Display PDF in an iframe
+        pdf_viewer = f"""
+        <iframe src="{pdf_file}" width="700" height="500"></iframe>
+        """
+        st.components.v1.html(pdf_viewer, height=500)
     
     else:
         st.warning(f"Reflection for {selected_person} is not available yet.")
