@@ -80,8 +80,14 @@ elif view_option == "Self Reflection":
     
     pdf_file = f"reflection_{selected_person}.pdf"
     
-    if os.path.exists(pdf_file):
+     if os.path.exists(pdf_file):
+        # Show the PDF in Streamlit
         with open(pdf_file, "rb") as pdf:
-            st.download_button(label="Download Reflection PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
+            base64_pdf = pdf.read()
+        
+        # Convert to displayable format
+        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="500"></iframe>'
+        st.markdown(pdf_display, unsafe_allow_html=True)
+    
     else:
         st.warning(f"Reflection for {selected_person} is not available yet.")
