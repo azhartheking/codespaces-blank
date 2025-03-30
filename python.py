@@ -160,7 +160,7 @@ elif view_option == "Extra Information":
     st.video('https://youtu.be/q-N4fSSz3ME?si=GJTfq5md3G0fiK_y')
     st.markdown("High Liquid Performance Chromotograph")
     st.video('https://youtu.be/9ZqL4MOWAi8?si=o8g7mMWniBGtJkMc')
-    st.markdown('Do you know how to read IR Spectroscopy?)
+    st.markdown('Do you know how to read IR Spectroscopy?')
     st.video('https://youtu.be/WTmj_9VT5oE?si=0v6m1A6CA9c6XRUU')
     st.markdown(" Atomic Absorption Spectroscopy")
     st.video('https://youtu.be/miKyZm_vI_g?si=mUOT50boMPBThzUF")
