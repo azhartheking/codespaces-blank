@@ -57,6 +57,11 @@ if view_option == "Our Team":
 elif view_option == "Course Introduction":
     st.header("Course Introduction")
     st.write("This course is a required component of core discipline in Chemical Engineering profession.  It is designed to equip engineers with the fundamental of analytical chemistry.  This course will help Engineers to take up challenges in analyzing and evaluating samples in chemical industries. ")
+    selected_chapter = st.selectbox("Select a chapter to view Notes", [" Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6","Chapter 7 ", "Chapter 8"], "Chapter 9")
+    
+    pdf_file = f"Notes/Chapter_{selected_chapter}.pdf"
+    reflection_image = f"Notes/Chapter_{selected_chapter}.jpg"
+
 
 # Lecturer Information
 elif view_option == "Lecturer Information":
@@ -81,10 +86,6 @@ elif view_option == "Lecturer Information":
     st.write("Dr. Hakim is also highly regarded for his international collaborations, working closely with renowned institutions such as NTNU (Norway), USP (Brazil), PRSB, UCBL (France), UCLL (Belgium), and KEEI (Uzbekistan). His active involvement in cross-border research and academic exchange programs has significantly contributed to scientific knowledge, technological advancements, and global cooperation in chemical engineering. ")
     st.write("Beyond his research and academic pursuits, Dr. Hakim plays a crucial role in mentoring and guiding students, inspiring them to excel in their respective fields. His ability to bridge theoretical knowledge with industrial applications makes him a highly respected figure among both students and fellow academics. His passion for research, education, and innovation continues to drive progress in chemical engineering, making a lasting impact on both the academic community and the industry. ")
     st.write("A true inspiration and a remarkable leader in the field, Dr. Hakim’s unwavering dedication to excellence sets an outstanding example for aspiring engineers and researchers worldwide  ")
-
-elif view_option == "Lecture Notes":
-    st.header("Lecture Notes")
-    
     
 # Mindmap Section
 elif view_option == "Mindmap":
