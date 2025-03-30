@@ -22,11 +22,11 @@ if view_option == "Our Team":
         "Members Photo/1.jpg",
         "Members Photo/1.jpg",
         "Members Photo/1.jpg",
-        "Members Photo/2.jpg",
         "Members Photo/1.jpg",
+        "Members Photo/2.jpg",
     ]
     # Team member names
-    team_member_names = ["Azhar", "Suhayb", "Hakimi", "Humaira", "ghost", "Lydia"]
+    team_member_names = ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia", "Ghost"]
     
     # First row: Azhar, Suhayb, Hakimi
     row1_cols = st.columns(3, gap="small")  # Create 3 columns for the first row
@@ -46,7 +46,7 @@ if view_option == "Our Team":
             if os.path.exists(img_path):
                 # Display the image with a caption
                 st.image(img_path, caption=f"**{name}**", use_container_width=True)
-            elif name == "ghost":
+            elif name == "Ghost":
                 st.write("")
             else:
                 # Display a placeholder for missing images
@@ -75,16 +75,19 @@ elif view_option == "Lecturer Information":
 # Mindmap Section
 elif view_option == "Mindmap":
     st.header("Mindmap")
-    selected_chapter = st.selectbox("Select Chapter", [f"Chapter {i}" for i in range(1, 9)])
+    
+    # Select a person
     selected_person = st.selectbox("Select Member", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
     
-    pdf_file = f"mindmap_{selected_chapter}_{selected_person}.pdf"
-    
-    if os.path.exists(pdf_file):
-        with open(pdf_file, "rb") as pdf:
-            st.download_button(label="Download Mindmap PDF", data=pdf, file_name=pdf_file, mime="application/pdf")
-    else:
-        st.warning(f"Mindmap for {selected_chapter} by {selected_person} is not available yet.")
+    # Loop through all chapters and display their images
+    for chapter in range(1, 10):  # Assuming there are 9 chapters
+        image_file = f"Su/Ch{chapter}_{selected_person[0].upper()}.jpg"  # Use the first letter of the person's name
+        
+        if os.path.exists(image_file):
+            st.subheader(f"Chapter {chapter}")
+            st.image(image_file, caption=f"Mindmap for Chapter {chapter} by {selected_person}", use_container_width=True)
+        else:
+            st.warning(f"Mindmap for Chapter {chapter} by {selected_person} is not available.")
 
 # Self Reflection Section
 elif view_option == "Self Reflection":
