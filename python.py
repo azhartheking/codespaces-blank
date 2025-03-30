@@ -157,5 +157,5 @@ elif view_option == "Self Reflection":
 elif view_option == "Extra Information":
     st.markdown("" Gas Chromotography In Industry"")
     st.video('https://youtu.be/q-N4fSSz3ME?si=GJTfq5md3G0fiK_y')
-    st.markdown(""High Liquid Performance Chromotograph")
+    st.markdown(""High Liquid Performance Chromotograph"")
     st.video('https://youtu.be/q-N4fSSz3ME?si=GJTfq5md3G0fiK_y')
