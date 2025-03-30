@@ -1,0 +1,6 @@
+    .centered-image {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center;    /* Centers vertically */
+        height: 100%;           /* Ensures the container takes full height */
+    }
