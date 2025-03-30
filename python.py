@@ -19,9 +19,9 @@ if view_option == "Our Team":
  # Team Members images path handling
     team_img_path = [
         "Members Photo/azhar.JPG",
-    "Members Photo/1.jpg",
-    "Members Photo/2.jpg",
     "Members Photo/3.jpg",
+    "Members Photo/3.jpg",
+    "Members Photo/2.jpg",
     "Members Photo/4.jpg"
     ]
     # Team member names
