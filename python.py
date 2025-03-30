@@ -155,6 +155,7 @@ elif view_option == "Self Reflection":
     else:
         st.warning(f"Reflection PDF for {selected_person} is not available.")
 elif view_option == "Extra Information":
+    st.write("Do you know how Analytical Instrument works?")
     st.markdown(" Gas Chromotography In Industry")
     st.video('https://youtu.be/q-N4fSSz3ME?si=GJTfq5md3G0fiK_y')
     st.markdown("High Liquid Performance Chromotograph")
