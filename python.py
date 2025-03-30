@@ -90,7 +90,6 @@ elif view_option == "Mindmap":
     # Loop through all chapters and display their images
     for chapter in range(1, 10):  # Assuming there are 9 chapters
         image_file = f"{selected_person}/Ch{chapter}_{selected_person}.jpg"
-        image_file = f"{selected_person}/Ch{chapter}_{selected_person}.jpeg"
         
         if os.path.exists(image_file):
             st.subheader(f"Chapter {chapter}")
