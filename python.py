@@ -56,9 +56,7 @@ if view_option == "Our Team":
 # Course Introduction
 elif view_option == "Course Introduction":
     st.header("Course Introduction")
-    st.write("This course is a required component of core discipline in Chemical Engineering profession.  It is designed to 
-equip engineers with the fundamental of analytical chemistry.  This course will help Engineers to take up 
-challenges in analyzing and evaluating samples in chemical industries. ")
+    st.write("This course is a required component of core discipline in Chemical Engineering profession.  It is designed to equip engineers with the fundamental of analytical chemistry.  This course will help Engineers to take up challenges in analyzing and evaluating samples in chemical industries. ")
 
 # Lecturer Information
 elif view_option == "Lecturer Information":
