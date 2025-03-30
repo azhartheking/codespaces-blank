@@ -163,7 +163,7 @@ elif view_option == "Extra Information":
     st.markdown('Do you know how to read IR Spectroscopy?')
     st.video('https://youtu.be/WTmj_9VT5oE?si=0v6m1A6CA9c6XRUU')
     st.markdown(" Atomic Absorption Spectroscopy")
-    st.video('https://youtu.be/miKyZm_vI_g?si=mUOT50boMPBThzUF")
+    st.video('https://youtu.be/miKyZm_vI_g?si=mUOT50boMPBThzUF')
     st.markdown(" Atomic Emmision Spectroscopy")
     st.video('https://youtu.be/avFm5M9TiVE?si=XsjRumbf67M3089-')
     st.markdown("Atomic Fluorescence Spectroscopy")
