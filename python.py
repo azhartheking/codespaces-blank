@@ -48,7 +48,7 @@ elif view_option == "Lecturer Information":
     st.header("Lecturer Information")
     
     # Corrected path handling for lecturer image
-    lecturer_img_path = "lecturer_photo.jpg"
+    lecturer_img_path =  "Members Photo/drhakim.1.jpg"
     
     if os.path.exists(lecturer_img_path):
         lecturer_img = Image.open(azhar.JPG)
