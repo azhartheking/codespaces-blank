@@ -11,7 +11,7 @@ st.title("Analytical Chemistry E-Portfolio")
 st.sidebar.title("Dashboard Selector")
 view_option = st.sidebar.radio(
     "Choose what to view:",
-    ["Our Team", "Course Introduction", "Lecturer Information", "Mindmap", "Self Reflection", "Extra Categories"]
+    ["Our Team", "Course Introduction", "Lecturer Information", "Mindmap", "Self Reflection", "Extra Information"]
 )
 
 # Team Photo and Name
