@@ -23,7 +23,7 @@ if view_option == "Our Team":
         "Members Photo/3.jpeg",
         "Members Photo/1.jpg",
         "Members Photo/2.jpeg",
-        "Members Photo/4.jpeg",
+        "Members Photo/4.jpg",
         "Members Photo/5.jpeg"
     ]
     # Team member names
