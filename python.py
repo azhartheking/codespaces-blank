@@ -22,7 +22,7 @@ if view_option == "Our Team":
         "Members Photo/3.jpg",
         "Members Photo/2.jpeg",
         "Members Photo/2.jpg",
-        "Members Photo/5.jpg"
+        "Members Photo/5.jpeg"
     ]
     # Team member names
     team_member_names = ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"]
