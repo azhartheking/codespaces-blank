@@ -11,7 +11,7 @@ st.title("Team Project Website")
 st.sidebar.title("Dashboard Selector")
 view_option = st.sidebar.radio(
     "Choose what to view:",
-    ["Our Team", "Course Introduction", "Lecturer Information", "Mindmap", "Self Reflection", "Extra Categories"]
+    ["Our Team", "Course Introduction", "Lecturer Information", "Lecture Notes", "Mindmap", "Self Reflection", "Extra Categories"]
 )
 
 # Team Photo and Name
@@ -82,6 +82,10 @@ elif view_option == "Lecturer Information":
     st.write("Beyond his research and academic pursuits, Dr. Hakim plays a crucial role in mentoring and guiding students, inspiring them to excel in their respective fields. His ability to bridge theoretical knowledge with industrial applications makes him a highly respected figure among both students and fellow academics. His passion for research, education, and innovation continues to drive progress in chemical engineering, making a lasting impact on both the academic community and the industry. ")
     st.write("A true inspiration and a remarkable leader in the field, Dr. Hakim’s unwavering dedication to excellence sets an outstanding example for aspiring engineers and researchers worldwide  ")
 
+elif view_option == "Lecture Notes":
+    st.header("Lecture Notes")
+    
+    
 # Mindmap Section
 elif view_option == "Mindmap":
     st.header("Mindmap")
