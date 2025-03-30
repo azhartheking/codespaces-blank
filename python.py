@@ -78,7 +78,7 @@ elif view_option == "Self Reflection":
     st.header("Self Reflection")
     selected_person = st.selectbox("Select a person to view reflection", ["Azhar", "Suhayb", "Hakimi", "Humaira", "Lydia"])
     
-    pdf_file = f"reflection_{selected_person}.pdf"
+    pdf_file = f"Reflections/{selected_person}.pdf"
     
     if os.path.exists(pdf_file):
         # Show the PDF in Streamlit
